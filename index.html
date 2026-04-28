@@ -1,25 +1,49 @@
 <!DOCTYPE html>
-  <html lang="en">
-  <head>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My First Website</title>
-  <style>
+    <style>
     body {
       font-family: Arial, sans-serif;
       max-width: 800px;
       margin: 60px auto;
       text-align: center;
       background-color: #f0f4ff;
-              color: #333;
-}
+      color: #333;
+    }
     h1 { color: #4a90e2; }
     p { font-size: 1.2em; }
-  </style>
-    </head>
-    <body>
-      <h1>Hello, World!</h1>
-      <p>Welcome to my first GitHub Pages website!</p>
-      <p>Built with HTML and hosted for free on GitHub.</p>
-    </body>
-    </html>
+    #clock {
+      font-size: 3em;
+      font-weight: bold;
+      color: #4a90e2;
+      background: #fff;
+      border-radius: 16px;
+      display: inline-block;
+      padding: 20px 40px;
+      margin: 30px auto;
+      box-shadow: 0 4px 16px rgba(74,144,226,0.15);
+      letter-spacing: 4px;
+    }
+    </style>
+</head>
+<body>
+    <h1>Hello, World!</h1>
+    <p>Welcome to my first GitHub Pages website!</p>
+    <p>Built with HTML and hosted for free on GitHub.</p>
+    <div id="clock">00:00:00</div>
+    <script>
+    function updateClock() {
+      const now = new Date();
+      const h = String(now.getHours()).padStart(2, '0');
+      const m = String(now.getMinutes()).padStart(2, '0');
+      const s = String(now.getSeconds()).padStart(2, '0');
+      document.getElementById('clock').textContent = h + ':' + m + ':' + s;
+    }
+    updateClock();
+    setInterval(updateClock, 1000);
+    </script>
+</body>
+</html>
